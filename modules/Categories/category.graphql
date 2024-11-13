@@ -1,0 +1,16 @@
+# src/schemas/category.graphql
+
+type Category {
+  _id: ID!
+  name: String!
+  restaurantId: ID!
+  menuItems: [MenuItem]
+}
+
+type Query {
+  categories(restaurantId: ID!): [Category]
+}
+
+type Mutation {
+  createCategory(restaurantId: ID!, name: String!): Category
+}

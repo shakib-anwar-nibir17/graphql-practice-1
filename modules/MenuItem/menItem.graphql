@@ -1,0 +1,17 @@
+# src/schemas/menuItem.graphql
+
+type MenuItem {
+  _id: ID!
+  name: String!
+  price: Float!
+  categoryId: ID!
+}
+
+type Query {
+  menuItems(categoryId: ID!): [MenuItem]
+}
+
+type Mutation {
+  createMenuItem(categoryId: ID!, name: String!, price: Float!): MenuItem
+  deleteMenuItem(id: ID!): Boolean
+}

@@ -1,0 +1,18 @@
+# src/schemas/restaurant.graphql
+
+type Restaurant {
+  _id: ID!
+  name: String!
+  location: String
+  categories: [Category]
+}
+
+type Query {
+  restaurants: [Restaurant]
+  restaurant(id: ID!): Restaurant
+}
+
+type Mutation {
+  createRestaurant(name: String!, location: String): Restaurant
+  deleteRestaurant(id: ID!): Boolean
+}
